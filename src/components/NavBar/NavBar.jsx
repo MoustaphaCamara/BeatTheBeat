@@ -7,7 +7,7 @@ const navList = ["Button", "Button", "Button", "Button", "Button"];
 const NavBar = () => {
   return (
     <div>
-      <div className="navbar">
+      <div className="nav">
         <ul>
           {navList.map((item) => (
             <li className="nav_item">{item} </li>
