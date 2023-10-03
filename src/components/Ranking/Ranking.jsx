@@ -7,8 +7,8 @@ const Ranking = () => {
     <>
       <h1>Classement</h1>
       <ul>
-        {data.map((user) => (
-          <li>{user}</li>
+        {data.map((user, index) => (
+          <li key={index}>{user}</li>
         ))}
       </ul>
     </>
