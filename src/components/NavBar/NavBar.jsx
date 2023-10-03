@@ -1,3 +1,4 @@
+import Login from "./Login/Login";
 import "./NavBar.scss";
 
 // éléments de la NavBar :
@@ -11,6 +12,9 @@ const NavBar = () => {
           {navList.map((item) => (
             <li className="nav_item">{item} </li>
           ))}
+          <li>
+            <Login />
+          </li>
         </ul>
       </div>
     </div>
