@@ -7,12 +7,12 @@ const RoomPageQuizz = () => {
     <div className="quizz_container">
       <h2>Lorem ipsum dolor sit amet.</h2>
       <h3 className="quizz_timer">20s</h3>
-      <div className="quizz_image">
+      <div>
         <img src="src/assets/quizz_girl.png" alt="quizz_girl" />
+        <QuizzInput />
+        <QuizzQCM />
+        <QuizzResponse />
       </div>
-      <QuizzInput />
-      <QuizzQCM />
-      <QuizzResponse />
     </div>
   );
 };

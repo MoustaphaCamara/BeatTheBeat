@@ -18,6 +18,23 @@
   font-size: 2rem;
 }
 
-.quizz_image img {
+.quizz_container img {
   height: 200px;
+}
+
+.quizz_input {
+  display: flex;
+  justify-content: space-between;
+  & input[type="text"] {
+    background: white;
+    padding: 4px;
+    border-radius: 6px;
+    width: 65%;
+  }
+  & input[type="submit"] {
+    background: fuchsia;
+    color: #242424;
+    padding: 4px 16px;
+    border-radius: 6px;
+  }
 }
