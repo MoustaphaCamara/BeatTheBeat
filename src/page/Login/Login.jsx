@@ -1,17 +1,28 @@
 import "./Login.scss";
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
-    e.preventDfault();
+    e.preventDefault();
     axios
-      .post("http://localhost:8081/login")
-      .then((res) => console.log(res))
+      .post("http://localhost:8081/login", values)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          navigate("/");
+        } else {
+          alert(res.data.Message);
+        }
+      })
       .catch((res) => console.log(err));
   };
   return (
