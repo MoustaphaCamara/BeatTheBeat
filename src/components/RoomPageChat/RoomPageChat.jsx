@@ -1,7 +1,8 @@
 import "./RoomPageChat.scss";
 
 const RoomPageChat = () => {
-  return <div>RoomPageChat</div>;
+  return;
+  <div>page chat</div>;
 };
 
 export default RoomPageChat;
