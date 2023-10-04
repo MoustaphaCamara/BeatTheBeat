@@ -2,8 +2,8 @@ import Banner from "./components/Banner/Banner";
 import NavBar from "./components/NavBar/NavBar";
 import RoomList from "./components/RoomList/RoomList";
 import React from "react";
-import Login from "./components/NavBar/Login/Login";
-import Home from "./components/NavBar/Home/Home";
+import Login from "./page/Login/Login";
+import Home from "./page/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
