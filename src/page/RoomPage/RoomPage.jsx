@@ -1,9 +1,15 @@
 import "./RoomPage.scss";
-import NavBar from "../../components/NavBar/NavBar";
+import RoomPageChat from "../../components/RoomPageChat/RoomPageChat";
+import RoomPagePlayerList from "../../components/RoomPagePlayerList/RoomPagePlayerList";
+import RoomPageQuizz from "../../components/RoomPageQuizz/RoomPageQuizz";
 const RoomPage = () => {
   return (
     <>
-      <NavBar />
+      <div className="room_container">
+        <RoomPageQuizz />
+        <RoomPageChat />
+        <RoomPagePlayerList />
+      </div>
     </>
   );
 };

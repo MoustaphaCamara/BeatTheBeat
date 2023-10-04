@@ -1,7 +1,7 @@
 import "./RoomPagePlayerList.scss";
 
 const RoomPagePlayerList = () => {
-  return <div></div>;
+  return <div>ROOMPL</div>;
 };
 
 export default RoomPagePlayerList;
