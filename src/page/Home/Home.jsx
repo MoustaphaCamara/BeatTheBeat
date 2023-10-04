@@ -9,10 +9,20 @@ import "./home.scss";
 function Home() {
   return (
     <>
-      <NavBar />
-      <RoomList />
+      <Navbar />
+      <Banner />
+
+      <div className="home_container">
+        <div className="left_part">
+          <CreateRoom />
+          <RoomList />
+        </div>
+        <div className="right_part">
+          <Ranking />
+        </div>
+      </div>
     </>
   );
 }
 
-export default Home;
+export default Home; 
