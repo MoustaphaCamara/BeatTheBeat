@@ -9,7 +9,6 @@ import "./home.scss";
 function Home() {
   return (
     <>
-      <Navbar />
       <Banner />
 
       <div className="home_container">
@@ -25,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home; 
+export default Home;
