@@ -14,8 +14,10 @@ const RoomPagePlayerList = () => {
         PLAYER : <span>4/5</span>
       </h3>
       <div className="players">
-        {players.map((player) => (
-          <div className="player">{player}</div>
+        {players.map((player, index) => (
+          <div className="player" key={index}>
+            {player}
+          </div>
         ))}
       </div>
     </div>
