@@ -1,5 +1,6 @@
-.banner {
+img {
   width: 100vw;
-  height: 300px;
-  background: url("../src/assets/banner_btb.png") center/cover;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
 }

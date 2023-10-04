@@ -1,4 +1,6 @@
+import Input from "../ui/InputButtonRoom/InputButton";
 import "./CreateRoom.scss";
+
 
 const CreateRoom = () => {
 	return (
@@ -6,18 +8,12 @@ const CreateRoom = () => {
 			<div className="container-inputs">
 				<div className="side-create-room">
 					<h3>Pseudo</h3>
-					<div className="input-pseudo">
-						<input type="text" placeholder="pseudo" name="text" className="input" />
-						<button>Create Room</button>
-					</div>
+					<Input placeholder="pseudo" button="Create room"/>
 				</div>
 
 				<div className="side-join-room">
 					<h3>Rejoindre un salon</h3>
-					<div className="input-idRoom">
-						<input type="text" placeholder="#" name="text" className="input" />
-						<button>Join</button>
-					</div>
+					<Input placeholder="#" button="Join" size="small" />
 				</div>
 			</div>
 		</div>

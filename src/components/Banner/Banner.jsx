@@ -1,5 +1,8 @@
+import banner from "../../assets/banner_btb.png";
+import "./Banner.scss";
+
 const Banner = () => {
-  return <div className="banner"></div>;
+  return <img src={banner} alt="photo banner" />;
 };
 
 export default Banner;
