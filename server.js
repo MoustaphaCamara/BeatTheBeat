@@ -6,9 +6,10 @@ import jwt from "jsonwebtoken";
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://127.0.0.1:5173"],
+    origin: ["http://localhost:3000"],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -16,13 +17,33 @@ app.use(
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",
+  user: "root@localhost",
   password: "",
   database: "signup",
 });
 
+const verifyUser = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.json({ Message: "We need token  please provide it. " });
+  } else {
+    jwt.verify(token, "our-jsonwebtoken-secret-key", (err, decoded) => {
+      if (err) {
+        return res.json({ Message: "Authentication Error. " });
+      } else {
+        req.name = decoded.name;
+        next();
+      }
+    });
+  }
+};
+
+app.get("/", verifyUser, (req, res) => {
+  return res.json({ Status: "Success", name: req.name });
+});
+
 app.post("/login", (req, res) => {
-  const sql = "SELECT * FROM login WHERE email = ?, AND password = ?";
+  const sql = "SELECT * FROM login WHERE email = ? AND password = ?";
   db.query(sql, [req.body.email, req.body.password], (err, data) => {
     if (err) return res.json({ Message: "Server Side Error" });
     if (data.length > 0) {
@@ -33,11 +54,16 @@ app.post("/login", (req, res) => {
       res.cookie("token", token);
       return res.json({ Status: "Success" });
     } else {
-      return res.json({ Message: "No records existed" });
+      return res.json({ Message: "No Records existed" });
     }
   });
 });
 
+app.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  return res.json({ Status: "Success" });
+});
+
 app.listen(8081, () => {
-  console.log("Running");
+  console.log("server id on,onforopfprnfpirn");
 });
