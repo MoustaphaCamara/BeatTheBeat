@@ -24,6 +24,8 @@
 
     &:hover {
       filter: contrast(1.75);
+      cursor: pointer;
+      transform: translateY(-1px);
     }
   }
 }
