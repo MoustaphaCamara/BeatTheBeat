@@ -6,8 +6,6 @@ import RoomPage from "./page/RoomPage/RoomPage";
 function App() {
   return (
     <>
-      <NavBar />
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
