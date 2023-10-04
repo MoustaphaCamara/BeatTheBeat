@@ -29,7 +29,45 @@ const Rooms = () => {
 			idRoom: 2790,
 			nbPlayer: 4,
 			totalPlayer: 5,
+		},{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
 		},
+		{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
+		},{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
+		},
+		{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
+		},{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
+		},
+		{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
+		},{
+			pseudo: "Askralos",
+			idRoom: 2790,
+			nbPlayer: 4,
+			totalPlayer: 5,
+		}
 	]);
 	return (
 		<>
