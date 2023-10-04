@@ -10,9 +10,12 @@ const RoomPageQuizz = () => {
   return (
     <div className="quizz_container">
       {/* temporaire pr check les rendus */}
-      <button onClick={() => setType("input")}>change to input</button>
-      <button onClick={() => setType("qcm")}>qcm</button>
-      <button onClick={() => setType("answer")}>answer</button>
+      <p>Dev mode : choisis cque tu veux frérot </p>
+      <div className="state">
+        <button onClick={() => setType("input")}>change to input</button>
+        <button onClick={() => setType("qcm")}>qcm</button>
+        <button onClick={() => setType("answer")}>answer</button>
+      </div>
       {/* EO rendus */}
       <h2>Lorem ipsum dolor sit amet.</h2>
       <h3 className="quizz_timer">20s</h3>

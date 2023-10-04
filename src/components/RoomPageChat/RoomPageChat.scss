@@ -1,0 +1,17 @@
+.chat_container {
+  padding: 8px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  height: 100%;
+  flex-shrink: 0;
+
+  border-radius: 20px;
+  background: rgba(217, 217, 217, 0.3);
+  box-shadow: 4px 4px 20px 0px rgba(48, 225, 241, 0.4);
+}
+
+.chat_pseudo {
+  font-weight: bold;
+}

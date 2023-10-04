@@ -1,3 +1,20 @@
+.state {
+  display: flex;
+  gap: 4px;
+  & button {
+    padding: 8px;
+    background: #18848e;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    &:hover {
+      background: purple;
+      transform: scale(1.1);
+    }
+  }
+}
+
 .quizz_container {
   display: flex;
   justify-content: center;
