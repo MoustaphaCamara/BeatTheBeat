@@ -5,7 +5,19 @@
 
   color-scheme: light dark;
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  // background-color: rgba(255, 255, 255, 0.87);
+  background: radial-gradient(
+      195.95% 123.81% at 77.12% 75.29%,
+      rgba(48, 225, 241, 0.2) 0%,
+      rgba(16, 76, 82, 0.07) 66.09%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(
+      67.88% 49.06% at 26.81% 39.45%,
+      rgba(221, 46, 229, 0.5) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  background-blend-mode: lighten, normal;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
