@@ -23,7 +23,7 @@ export default function Login() {
           alert(res.data.Message);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err + values.email));
   };
 
   return (

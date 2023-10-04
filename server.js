@@ -16,11 +16,17 @@ app.use(
 );
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root@localhost",
+  host: "10.70.1.117",
+  user: "root",
   password: "",
   database: "signup",
 });
+
+db.connect(function (err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+// console.log(Object.values(db));
 
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
@@ -65,5 +71,5 @@ app.get("/logout", (req, res) => {
 });
 
 app.listen(8081, () => {
-  console.log("server id on,onforopfprnfpirn");
+  console.log("server id on");
 });
