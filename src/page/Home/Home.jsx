@@ -5,6 +5,7 @@ import RoomList from "../../components/RoomList/RoomList"
 import Ranking from "../../components/Ranking/Ranking"
 
 import "./home.scss"
+
 function Home() {
   return (
     <>
@@ -13,8 +14,8 @@ function Home() {
 
       <div className="grid-container-home">
         <CreateRoom className="create-room-grid"/>
-        <RoomList className="roomList-grid"/>
         <Ranking className="ranking-grid"/>
+        <RoomList className="roomList-grid"/>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 
 const Banner = () => {
-  return <div className="banner"></div>;
+  return ;
 };
 
 export default Banner;
