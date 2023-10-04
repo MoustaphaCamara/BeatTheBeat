@@ -1,11 +1,11 @@
-import react from "react";
-import NavBar from "../NavBar";
-import RoomList from "../../RoomList/RoomList";
-
+import NavBar from "../../components/NavBar/NavBar";
+import RoomList from "../../components/RoomList/RoomList";
+import Banner from "../../components/Banner/Banner";
 function Home() {
   return (
     <>
       <NavBar />
+      <Banner />
       <RoomList />
     </>
   );
