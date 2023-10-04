@@ -1,4 +1,3 @@
-import Navbar from "../../components/NavBar/NavBar";
 import Banner from "../../components/Banner/Banner";
 import CreateRoom from "../../components/CreateRoom/CreateRoom";
 import RoomList from "../../components/RoomList/RoomList";
