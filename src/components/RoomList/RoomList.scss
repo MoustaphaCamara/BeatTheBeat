@@ -1,0 +1,14 @@
+.container-room{
+  background-color: rgb(36, 221, 238, 0.4);
+  padding: 20px 40px;
+  border-radius: 20px ;
+}
+h1{
+  font-size: 1.5rem;
+}
+.grid-room{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+  margin-top: 20px;
+}
