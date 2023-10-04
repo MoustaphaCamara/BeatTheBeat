@@ -16,13 +16,16 @@
 }
 
 .quizz_container {
+  h2 {
+    color: #000;
+    text-shadow: 2px 2px 20px purple;
+  }
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 50%;
   min-width: 500px;
-  height: fit-content;
+  // height: fit-content;
   background: rgba(217, 217, 217, 0.4);
   box-shadow: 4px 4px 20px 0px rgba(221, 46, 229, 0.4);
   border-radius: 20px;
@@ -36,31 +39,16 @@
 }
 .quizz_timer {
   color: white;
-  text-transform: uppercase;
   font-size: 2rem;
 }
 
-.quizz_container img {
-  height: 200px;
-  width: 100%;
-}
-
-//--- QUIZZ INPUT COMPONENT ---//
-.quizz_input {
-  display: flex;
-  justify-content: space-between;
-  & input[type="text"] {
-    background: white;
-    padding: 4px;
-    border-radius: 6px;
-    width: 65%;
-  }
-  & input[type="submit"] {
-    background: fuchsia;
-    color: #242424;
-    padding: 4px 16px;
-    border-radius: 6px;
-  }
+.quizz img {
+  margin: 24px 0;
+  min-height: 200px;
+  max-height: 280px;
+  max-width: 460px;
+  min-width: 300px;
+  box-shadow: 0 0 5px black;
 }
 
 //--- QUIZZ QCM COMPONENT ---//

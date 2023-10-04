@@ -4,8 +4,10 @@ const choices = ["Prop A", "Prop B", "Prop C", "Prop D"];
 const QuizzQCM = () => {
   return (
     <div className="quizz_qcm">
-      {choices.map((choice) => (
-        <button className="choice">{choice}</button>
+      {choices.map((choice, index) => (
+        <button className="choice" key={index}>
+          {choice}
+        </button>
       ))}
     </div>
   );

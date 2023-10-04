@@ -1,0 +1,29 @@
+.quizz_input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  input[type="text"] {
+    height: 2.2rem;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    margin-right: 1rem;
+  }
+  input[type="submit"] {
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    color: #242424;
+    padding: 6px 16px;
+    border-radius: 6px;
+
+    &:hover {
+      filter: contrast(1.75);
+    }
+  }
+}
