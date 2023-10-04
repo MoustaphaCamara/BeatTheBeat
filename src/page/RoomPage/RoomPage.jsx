@@ -7,8 +7,8 @@ const RoomPage = () => {
     <>
       <div className="room_container">
         <RoomPageQuizz />
-        <RoomPageChat />
         <RoomPagePlayerList />
+        <RoomPageChat />
       </div>
     </>
   );
