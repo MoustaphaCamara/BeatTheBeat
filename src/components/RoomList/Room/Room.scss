@@ -1,5 +1,5 @@
 .room-card{
-  max-width: 240px;
+  min-width: 250px;
   display: flex;
   background: white;
   padding: 10px 20px;
@@ -16,7 +16,7 @@
 .joueur{
   font-size: 0.75rem;
 }
-button{
+.joueur-buttonjoin > button{
   background: #24DDEE;
   padding: 7px 18px;
   border-radius: 10px;
