@@ -11,7 +11,7 @@ const RoomPagePlayerList = () => {
   return (
     <div className="players_container">
       <h3>
-        PLAYER : <span>4/5</span>
+        PLAYERS : <span>4/5</span>
       </h3>
       <div className="players">
         {players.map((player, index) => (

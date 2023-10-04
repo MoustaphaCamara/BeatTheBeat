@@ -1,11 +1,13 @@
-import React from "react";
+import InputTextSubmit from "../ui/InputTextSubmit/InputTextSubmit";
 
 const QuizzInput = () => {
   return (
-    <div className="quizz_input">
-      <input type="text" placeholder="Mohamed Ali" />
-      <input type="submit" value="Valider" />
-    </div>
+    <InputTextSubmit
+      placeholder="Mohamed Ali"
+      action="Répondre"
+      color="linear-gradient(144deg, #EF79F2, #00C3CF)
+    "
+    />
   );
 };
 

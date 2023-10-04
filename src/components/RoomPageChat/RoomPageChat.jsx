@@ -1,3 +1,4 @@
+import InputTextSubmit from "../ui/InputTextSubmit/InputTextSubmit";
 import "./RoomPageChat.scss";
 
 const RoomPageChat = () => {
@@ -12,10 +13,11 @@ const RoomPageChat = () => {
           <span className="chat_pseudo">pseudo : </span> Lorem, ipsum dolor.
         </div>
         <div className="chat_input">
-          <div className="quizz_input">
-            <input type="text" placeholder="talk to me" />
-            <input type="submit" value="Valider" />
-          </div>
+          <InputTextSubmit
+            placeholder="talk to me"
+            action="Envoyer"
+            color="linear-gradient(144deg, rgba(242,192,121,1) , rgba(207,139,0,1))"
+          />
         </div>
       </div>
     </div>
