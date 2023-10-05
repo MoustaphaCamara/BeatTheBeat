@@ -2,6 +2,7 @@ import "./Login.scss";
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function Login() {
   const [values, setValues] = useState({
@@ -11,13 +12,13 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8081/login", values)
+      .post("http://localhost:8081/login", values, {})
       .then((res) => {
         if (res.data.Status === "Success") {
+          Cookies.set("token", res.data.token);
           navigate("/");
         } else {
           alert(res.data.Message);
@@ -62,7 +63,7 @@ export default function Login() {
           <button type="submit" className="btn btn-success w-100 rounded-0">
             Log in
           </button>
-          <p className="d-flex justify-content-center align-items-center ">
+          <p className="justify-content-center align-items-center ">
             You are agree to our terms and policies
           </p>
           <button className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">

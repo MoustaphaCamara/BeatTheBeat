@@ -9,9 +9,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "http://localhost:5173",
     methods: ["POST", "GET"],
-    credentials: true,
   })
 );
 
@@ -29,7 +28,8 @@ db.connect(function (err) {
 // console.log(Object.values(db));
 
 const verifyUser = (req, res, next) => {
-  const token = req.cookies.token;
+  console.log(req);
+  const token = req.body.cookie.token;
   if (!token) {
     return res.json({ Message: "We need token  please provide it. " });
   } else {
@@ -44,7 +44,7 @@ const verifyUser = (req, res, next) => {
   }
 };
 
-app.get("/", verifyUser, (req, res) => {
+app.post("/", verifyUser, (req, res) => {
   return res.json({ Status: "Success", name: req.name });
 });
 
@@ -58,7 +58,7 @@ app.post("/login", (req, res) => {
         expiresIn: "1d",
       });
       res.cookie("token", token);
-      return res.json({ Status: "Success" });
+      return res.json({ Status: "Success", token });
     } else {
       return res.json({ Message: "No Records existed" });
     }

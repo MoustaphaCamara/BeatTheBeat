@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,18 +9,21 @@ function Home() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get("http://localhost:8081").then((res) => {
-      // console.log('check api',res)
-      if (res.data.Status === "Success") {
-        setAuth(true);
-        setName(res.data.name);
-      } else {
-        setAuth(false);
-        setMessage(res.data.Message);
-      }
-    });
+    axios
+      .post("http://localhost:8081", {
+        cookie: { token: Cookies.get("token") },
+      })
+      .then((res) => {
+        console.log("check api", res);
+        if (res.data.Status === "Success") {
+          setAuth(true);
+          setName(res.data.name);
+        } else {
+          setAuth(false);
+          setMessage(res.data.Message);
+        }
+      });
   }, []);
 
   const handleLogout = () => {
@@ -27,7 +31,7 @@ function Home() {
       .get("http://localhost:8081/logout")
       .then((res) => {
         if (res.data.Status === "Success") {
-          localStorage.removeItem("auth");
+          Cookies.remove("token");
           window.location.reload(true);
         } else {
           alert("error");
