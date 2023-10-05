@@ -1,0 +1,36 @@
+.container-profil{
+	display: flex;
+	width: 700px;
+	gap: 30px;
+	padding: 20px 30px 20px 30px;
+	background-color: rgb(240, 136, 245, 0.6);
+	border-radius: 20px;
+	align-items: center;
+}
+
+.image-profil img{
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+.pseudo-rank{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.stats{
+	margin-top: 10px;
+	display: flex;
+	gap: 30px;
+	transform: translateY(40px);
+}
+.pseudo{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+}
+.pseudo span{
+	font-size: 0.9rem;
+color: rgba(255, 255, 255, 0.7);
+}

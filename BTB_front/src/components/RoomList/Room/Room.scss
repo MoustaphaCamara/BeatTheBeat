@@ -1,0 +1,25 @@
+.room-card{
+  min-width: 250px;
+  display: flex;
+  background: white;
+  padding: 10px 20px;
+  flex-direction: column;
+  border-radius: 20px;
+  gap: 3px;
+}
+.pseudo-idroom,
+.joueur-buttonjoin{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.joueur{
+  font-size: 0.75rem;
+}
+.joueur-buttonjoin > button{
+  background: #24DDEE;
+  padding: 7px 18px;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+}

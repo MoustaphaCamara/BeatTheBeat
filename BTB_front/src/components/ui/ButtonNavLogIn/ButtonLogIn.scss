@@ -1,0 +1,15 @@
+.button-logIn {
+  background-image: linear-gradient(144deg, #EF79F2, #00C3CF);
+  padding: 7px 25px;
+  border-radius: 15px;
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.4s ease; /* Ajout de la transition pour le filtre */
+}
+
+.button-logIn:hover {
+  filter: brightness(0.8); /* Assombrissement au survol */
+}
