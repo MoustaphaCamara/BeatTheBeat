@@ -3,6 +3,8 @@ import mysql from "mysql";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+const salt = 10;
 
 const app = express();
 app.use(express.json());
@@ -49,16 +51,24 @@ app.post("/", verifyUser, (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const sql = "SELECT * FROM login WHERE email = ? AND password = ?";
-  db.query(sql, [req.body.email, req.body.password], (err, data) => {
+  const sql = "SELECT * FROM login WHERE email = ?";
+  db.query(sql, [req.body.email], (err, data) => {
     if (err) return res.json({ Message: "Server Side Error" });
     if (data.length > 0) {
-      const name = data[0].name;
-      const token = jwt.sign({ name }, "our-jsonwebtoken-secret-key", {
-        expiresIn: "1d",
+      bcrypt.compare(req.body.password, data[0].password, (err, result) => {
+        if (err) return res.json({ Message: "Authentication error" });
+        if (result) {
+          // si le mot de passe correspond
+          const name = data[0].name;
+          const token = jwt.sign({ name }, "our-jsonwebtoken-secret-key", {
+            expiresIn: "1d",
+          });
+          res.cookie("token", token);
+          return res.json({ Status: "Success", token });
+        } else {
+          return res.json({ Message: "Incorrect password" });
+        }
       });
-      res.cookie("token", token);
-      return res.json({ Status: "Success", token });
     } else {
       return res.json({ Message: "No Records existed" });
     }
@@ -68,6 +78,18 @@ app.post("/login", (req, res) => {
 app.get("/logout", (req, res) => {
   res.clearCookie("token");
   return res.json({ Status: "Success" });
+});
+
+app.post("/register", (req, res) => {
+  const sql = "INSERT INTO login (name, email, password) VALUES (?,?,?)";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Message: "Error for hashing password" });
+    const values = [req.body.name, req.body.email, hash];
+    db.query(sql, values, (err, result) => {
+      if (err) return res.json({ Message: "Inserting data err in server" });
+      return res.json({ Status: "Success" });
+    });
+  });
 });
 
 app.listen(8081, () => {

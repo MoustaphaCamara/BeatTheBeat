@@ -1,41 +1,42 @@
-import "./Login.scss";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
-import Cookies from "js-cookie";
 
-export default function Login() {
+function Register() {
   const [values, setValues] = useState({
+    name: "",
     email: "",
     password: "",
   });
-
   const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8081/login", values, {})
-      .then((res) => {
-        console.log(res);
-        if (res.data.Status === "Success") {
-          Cookies.set("token", res.data.token); // Save the token in a cookie
-          navigate("/"); // Navigate to home page or any appropriate page you have set up
-        } else {
-          alert(res.data.Message); // Show the error message returned from the server
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("An error occurred during login."); // Show a generic error message
-      });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post("http://localhost:8081/register", values, {}).then((res) => {
+      if (res.data.Status === "Success") {
+        navigate("/login");
+      } else {
+        alert("Error");
+      }
+    });
   };
 
   return (
     <div className="d-flex justify-content-center align-items-center bg-primary vh-100">
-      <div className="bg-white p-3 rounded w-50">
-        <h2>Sign-In</h2>
+      <div className="bg-white p-3 rounded w-25">
+        <h2>Sign-Up</h2>
         <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="name">
+              <strong>Name</strong>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Name"
+              name="name"
+              onChange={(e) => setValues({ ...values, name: e.target.value })}
+              className="form-control rounded-0"
+            />
+          </div>
           <div className="mb-3">
             <label htmlFor="email">
               <strong>Email</strong>
@@ -44,10 +45,9 @@ export default function Login() {
               type="email"
               placeholder="Enter Email"
               name="email"
-              autoComplete="off"
               onChange={(e) => setValues({ ...values, email: e.target.value })}
               className="form-control rounded-0"
-            ></input>
+            />
           </div>
           <div className="mb-3">
             <label htmlFor="password">
@@ -57,27 +57,27 @@ export default function Login() {
               type="password"
               placeholder="Enter Password"
               name="password"
-              autoComplete="off"
               onChange={(e) =>
                 setValues({ ...values, password: e.target.value })
               }
               className="form-control rounded-0"
-            ></input>
+            />
           </div>
           <button type="submit" className="btn btn-success w-100 rounded-0">
-            Log in
+            {" "}
+            Sign up
           </button>
-          <p className="justify-content-center align-items-center ">
-            You are agree to our terms and policies
-          </p>
+          <p>You are agree to our terms and policies</p>
           <Link
-            to="/register"
+            to="/login"
             className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
           >
-            Register
+            Login
           </Link>
         </form>
       </div>
     </div>
   );
 }
+
+export default Register;
