@@ -60,11 +60,13 @@
 
 //--- QUIZZ QCM COMPONENT ---//
 .quizz_qcm {
+  width: 80%;
   display: grid;
   grid-template-areas:
     "a a "
     "b b ";
-  gap: 16px;
+  justify-content: space-around;
+  gap: 24px;
 }
 // QCM BUTTON
 
