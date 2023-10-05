@@ -1,5 +1,6 @@
 import { useState } from "react";
-import InputTextSubmit from "../ui/InputTextSubmit/InputTextSubmit";
+import InputTextRoom from "../ui/InputTextRoom/InputTextRoom";
+import InputSubmitRoom from "../ui/InputSubmitRoom/InputSubmitRoom";
 import "./RoomPageChat.scss";
 
 const RoomPageChat = () => {
@@ -32,11 +33,10 @@ const RoomPageChat = () => {
           </div>
         ))}
         <div className="chat_input">
-          <InputTextSubmit
-            placeholder="talk to me"
-            action="Envoyer"
-            color="linear-gradient(144deg, rgba(242,192,121,1) , rgba(207,139,0,1))"
-          />
+          <div className="quizz_input">
+            <InputTextRoom placeholder="pas d'insultes svp" />
+            <InputSubmitRoom action="Envoyer" color="cyan" />
+          </div>
         </div>
       </div>
     </div>

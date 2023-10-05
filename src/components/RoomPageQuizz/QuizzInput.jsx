@@ -1,13 +1,12 @@
-import InputTextSubmit from "../ui/InputTextSubmit/InputTextSubmit";
+import InputTextRoom from "../ui/InputTextRoom/InputTextRoom";
+import InputSubmitRoom from "../ui/InputSubmitRoom/InputSubmitRoom";
 
 const QuizzInput = () => {
   return (
-    <InputTextSubmit
-      placeholder="Mohamed Ali"
-      action="Répondre"
-      color="linear-gradient(144deg, #EF79F2, #00C3CF)
-    "
-    />
+    <div className="quizz_input">
+      <InputTextRoom placeholder="votre réponse.." />
+      <InputSubmitRoom action="répondre" color="fuchsia" />
+    </div>
   );
 };
 
