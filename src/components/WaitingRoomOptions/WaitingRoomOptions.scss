@@ -1,0 +1,120 @@
+.waiting_container {
+  margin-bottom: 2rem;
+  .category_title {
+    align-self: flex-start;
+    margin-left: 2rem;
+  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  min-width: 500px;
+  background: rgba(217, 217, 217, 0.4);
+  box-shadow: 4px 4px 20px 0px rgba(221, 46, 229, 0.4);
+  border-radius: 20px;
+  padding: 2rem 0;
+}
+
+.category_container {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+.choice-custom-2 {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  &:hover {
+    filter: contrast(2);
+  }
+}
+.choice-custom-2 span {
+  background: #68406a;
+  background: linear-gradient(96deg, #68406a 16.08%, #18848e 118.4%);
+}
+.choice-custom-2 span {
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.start {
+  color: black;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+
+  width: 120px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #24ddee;
+  transition: all 0.4s ease;
+
+  margin-top: 32px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    filter: contrast(2);
+  }
+}
+* {
+  border: 1px solid red;
+}
+.timer_container,
+.number_container {
+  margin: 16px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// NUMBERS
+.numbers {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    font-size: 1rem;
+  }
+}
+.values {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 2px solid #f088f5;
+  background: linear-gradient(116deg, #9b569e 0%, #1ba7b4 123.52%);
+}
+.timer_container .numbers .number {
+  width: 90px;
+}
