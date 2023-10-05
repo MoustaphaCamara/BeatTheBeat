@@ -5,7 +5,7 @@ import "./RoomList.scss";
 import { useState } from "react";
 
 const Rooms = () => {
-	const [roomProps, setRoomProps] = useState([
+	const [roomProps] = useState([
 		{
 			pseudo: "Askralos",
 			idRoom: 2790,

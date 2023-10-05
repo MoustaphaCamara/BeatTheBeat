@@ -27,7 +27,7 @@ const NavBar = () => {
       </div>
 
       <div className="sideright">
-        <ButtonSignIn content="Sign In" />
+        <ButtonSignIn />
         <NavLink to="/login">
           <ButtonLogIn content="Log In" />
         </NavLink>
