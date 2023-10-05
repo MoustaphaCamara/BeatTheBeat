@@ -3,10 +3,22 @@ import "./RoomPagePlayerList.scss";
 
 const RoomPagePlayerList = () => {
   const [players, setPlayers] = useState([
-    "Pseudo1",
-    "Pseudo2",
-    "Pseudo3",
-    "Pseudo4",
+    {
+      pseudo: "Askralos",
+      points: "44",
+    },
+    {
+      pseudo: "Carter",
+      points: "44",
+    },
+    {
+      pseudo: "Fromage",
+      points: "38",
+    },
+    {
+      pseudo: "GucciBaby",
+      points: "25",
+    },
   ]);
   return (
     <div className="players_container">
@@ -16,7 +28,7 @@ const RoomPagePlayerList = () => {
       <div className="players">
         {players.map((player, index) => (
           <div className="player" key={index}>
-            {player}
+            {player.pseudo} <span>{player.points}pts</span>
           </div>
         ))}
       </div>
