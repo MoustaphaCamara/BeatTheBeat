@@ -1,17 +1,36 @@
+import { useState } from "react";
 import InputTextSubmit from "../ui/InputTextSubmit/InputTextSubmit";
 import "./RoomPageChat.scss";
 
 const RoomPageChat = () => {
+  const [data, setData] = useState([
+    {
+      pseudo: "Carter",
+      message: "Lorem ipsum dolor sit amet.",
+    },
+    {
+      pseudo: "Askralos",
+      message:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, natus!",
+    },
+    {
+      pseudo: "Carter",
+      message: "oe mec gg wp",
+    },
+    {
+      pseudo: "Askralos",
+      message: "ez",
+    },
+  ]);
+
   return (
     <div>
-      <h3>CHATBOX</h3>
       <div className="chat_container">
-        <div className="chat_message">
-          <span className="chat_pseudo">pseudo : </span> Lorem, ipsum dolor.
-        </div>
-        <div className="chat_message">
-          <span className="chat_pseudo">pseudo : </span> Lorem, ipsum dolor.
-        </div>
+        {data.map((chat, index) => (
+          <div className="chat_message" key={index}>
+            <span className="chat_pseudo">{chat.pseudo} : </span> {chat.message}
+          </div>
+        ))}
         <div className="chat_input">
           <InputTextSubmit
             placeholder="talk to me"
