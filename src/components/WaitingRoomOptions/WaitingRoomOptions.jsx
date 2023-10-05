@@ -16,10 +16,12 @@ const categories = [
 const WaitingRoomOptions = () => {
   return (
     <div className="waiting_container">
-      <h3 className="category_title">CATEGORIES</h3>
+      <div className="title_container">
+        <h3 className="category_title">CATEGORIES</h3>
+      </div>
       <div className="category_container">
         {categories.map((category, index) => (
-          <button class="choice choice-custom-2" key={index}>
+          <button className="category_choice" key={index}>
             <span>{category}</span>
           </button>
         ))}
@@ -29,9 +31,9 @@ const WaitingRoomOptions = () => {
         <div className="numbers">
           <h3>Timer</h3>
           <div className="values">
-            <p className="number">15sec</p>
-            <p className="number">30sec</p>
-            <p className="number">45sec</p>
+            <button className="number">15sec</button>
+            <button className="number">30sec</button>
+            <button className="number">45sec</button>
           </div>
         </div>
       </div>
@@ -39,9 +41,9 @@ const WaitingRoomOptions = () => {
         <div className="numbers">
           <h3>Nombre de questions</h3>
           <div className="values">
-            <p className="number">10</p>
-            <p className="number">20</p>
-            <p className="number">30</p>
+            <button className="number">10</button>
+            <button className="number">20</button>
+            <button className="number">30</button>
           </div>
         </div>
       </div>
