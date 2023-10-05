@@ -27,7 +27,6 @@ db.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
 });
-// console.log(Object.values(db));
 
 const verifyUser = (req, res, next) => {
   console.log(req);
@@ -58,7 +57,6 @@ app.post("/login", (req, res) => {
       bcrypt.compare(req.body.password, data[0].password, (err, result) => {
         if (err) return res.json({ Message: "Authentication error" });
         if (result) {
-          // si le mot de passe correspond
           const name = data[0].name;
           const token = jwt.sign({ name }, "our-jsonwebtoken-secret-key", {
             expiresIn: "1d",

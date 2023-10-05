@@ -1,0 +1,59 @@
+.Login-button {
+  align-items: center;
+  background-image: linear-gradient(144deg, #ef79f2, #00c3cf);
+  border: 0;
+  border-radius: 15px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Phantomsans, sans-serif;
+  font-size: 18px;
+  line-height: 1em;
+  padding: 2px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 50px; /* You can adjust this as needed */
+}
+
+.Login-button:active,
+.Login-button:hover {
+  outline: 0;
+}
+
+.Login-button span {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 25px;
+  border-radius: 15px;
+  transition: 300ms;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login-button:hover span {
+  background: none;
+}
+
+.Login-button:active {
+  transform: scale(0.9);
+}
+
+.nam {
+  color: #fff;
+  font-size: larger;
+}
+
+.nam2 {
+  color: #fff;
+  font-size: 40px;
+}
