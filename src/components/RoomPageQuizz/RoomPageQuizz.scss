@@ -57,16 +57,25 @@
   grid-template-areas:
     "a a "
     "b b ";
+  gap: 16px;
 }
 .choice {
   cursor: pointer;
-
-  width: 230px;
+  width: 180px;
   height: 74px;
   flex-shrink: 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 
-  background: #000;
-  border-radius: 15px;
+  &:hover {
+    letter-spacing: 0.1rem;
+    filter: contrast(2.1);
+  }
+}
+.choice:nth-child(odd) {
   background: linear-gradient(96deg, #68406a 16.08%, #18848e 118.4%);
+}
+.choice:nth-child(even) {
+  background: linear-gradient(276deg, #754377 23.71%, #23959f 118.91%);
 }
 //--- QUIZZ RESPONSE COMPONENT ---//
