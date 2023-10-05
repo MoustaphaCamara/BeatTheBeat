@@ -2,7 +2,7 @@ import "./RoomPageQuizz.scss";
 import QuizzInput from "./QuizzInput";
 import QuizzQCM from "./QuizzQCM";
 import QuizzResponse from "./QuizzResponse";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const RoomPageQuizz = () => {
   const [type, setType] = useState("input");
@@ -22,8 +22,7 @@ const RoomPageQuizz = () => {
     <div className="quizz_container">
       {/* temporaire pr check les rendus */}
       <div className="state">
-        <p>Dev mode : choisis cque tu veux frérot </p>
-        <button onClick={() => setType("input")}>change to input</button>
+        <button onClick={() => setType("input")}>input</button>
         <button onClick={() => setType("qcm")}>qcm</button>
         <button onClick={() => setType("answer")}>answer</button>
       </div>
@@ -33,7 +32,7 @@ const RoomPageQuizz = () => {
       <div className="quizz">
         <img
           src="https://images.unsplash.com/photo-1696229250077-bf5e4d7f7106?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80"
-          alt="quizz_girl"
+          alt="quizz_picture"
         />
         {(type == "input" && <QuizzInput />) ||
           (type == "qcm" && <QuizzQCM />) ||

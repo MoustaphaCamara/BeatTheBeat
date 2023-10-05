@@ -1,6 +1,8 @@
 .state {
   display: flex;
   gap: 4px;
+  position: absolute;
+  top: 0;
   & button {
     padding: 8px;
     background: #18848e;
@@ -17,15 +19,20 @@
 
 .quizz_container {
   h2 {
+    font-size: 1.4rem;
     color: #000;
     text-shadow: 2px 2px 20px purple;
   }
+  h3 {
+    font-size: 1.2rem;
+  }
   display: flex;
+  // justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 50%;
   min-width: 500px;
-  // height: fit-content;
+  height: 530px;
   background: rgba(217, 217, 217, 0.4);
   box-shadow: 4px 4px 20px 0px rgba(221, 46, 229, 0.4);
   border-radius: 20px;
@@ -45,7 +52,7 @@
 .quizz img {
   margin: 24px 0;
   min-height: 200px;
-  max-height: 280px;
+  max-height: 250px;
   max-width: 460px;
   min-width: 300px;
   box-shadow: 0 0 5px black;
@@ -147,4 +154,11 @@
   -webkit-transform: rotateX(-90deg);
   -moz-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
+}
+
+.quizz_response {
+  p {
+    color: cyan;
+  }
+  text-align: center;
 }
