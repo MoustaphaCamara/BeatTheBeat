@@ -1,12 +1,13 @@
 import React from "react";
 
-const choices = ["Prop A", "Prop B", "Prop C", "Prop D"];
+const choices = ["Réponse A", "Réponse B", "Réponse C", "Réponse D"];
 const QuizzQCM = () => {
   return (
     <div className="quizz_qcm">
       {choices.map((choice, index) => (
-        <button className="choice" key={index}>
-          {choice}
+        <button class="choice choice-custom" key={index}>
+          <span>{choice}</span>
+          <span>Survole</span>
         </button>
       ))}
     </div>
