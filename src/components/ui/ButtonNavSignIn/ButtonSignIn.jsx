@@ -1,9 +1,9 @@
 import "./ButtonSignIn.scss"
 
-const ButtonSignIn = () => {
+const ButtonSignIn = ({content}) => {
   return (
     <button className="signIn-button">
-    <span className="text">Sign In</span>
+    <span className="text">{content}</span>
   </button>
 
   )

@@ -4,6 +4,7 @@ import Profil from "./page/Profil/Profil";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RoomPage from "./page/RoomPage/RoomPage";
 import NavBar from "./components/NavBar/NavBar";
+import Win from "./page/Win/Win";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/room" element={<RoomPage />}></Route>
           <Route path="/profil" element={<Profil />}></Route>
+          <Route path="/win" element={<Win />}></Route>
         </Routes>
       </BrowserRouter>
     </>
