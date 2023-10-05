@@ -1,0 +1,55 @@
+.container-win {
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-win {
+	padding: 10vh 10vw;
+	border-radius: 20px;
+	width: fit-content;
+	background: linear-gradient(180deg, rgba(245, 236, 17, 0.28) 0%, rgba(217, 217, 217, 0) 100%);
+}
+.winner {
+	display: flex;
+	justify-content: center;
+}
+.winner > h1 {
+	font-size: 2rem;
+}
+.podiums {
+	margin: 5vh 0vw 10vh 0vw;
+}
+
+.podium {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.second-third {
+	display: flex;
+	align-items: center;
+	gap: 10vw;
+}
+
+.button-home-play {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+.span-1st {
+	color: #f5ec11;
+}
+.span-2nd {
+	color: #11f544;
+}
+.span-3rd {
+	color: #01c2ff;
+}
+.podium > h3{
+  font-size: 1.5rem;
+}
