@@ -35,6 +35,13 @@ export default function Login() {
     <div className="d-flex justify-content-center align-items-center bg-primary vh-100">
       <div className="login-container d-flex">
         <div className="bg-white p-3 rounded w-50">
+          <Link to="/">
+            <img
+              src="src\assets\beatthe-transformed-modified-PhotoRoom.png-PhotoRoom.png"
+              alt="logo"
+              className="logo"
+            />
+          </Link>
           <h2 className="sign">Sign-In</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
