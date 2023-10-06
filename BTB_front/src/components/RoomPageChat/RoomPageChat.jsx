@@ -15,6 +15,8 @@ const RoomPageChat = () => {
 	const [message, setMessage] = useState("");
 	const [messageList, setMessageList] = useState([]);
 
+
+
 	const sendMessage = async () => {
 		if (message !== "") {
 			const messageData = {
@@ -29,10 +31,15 @@ const RoomPageChat = () => {
 	};
 
 	useEffect(() => {
+
+		if (room !== "") {
+			socket.emit("join_room", room);
+		}
+
 		socket.on("receive_message", (data) => {
 			setMessageList((list) => [...list, data]);
 		});
-	}, [socket, author]);
+	}, []);
 
 	console.log(messageList);
 
@@ -60,7 +67,6 @@ const RoomPageChat = () => {
 							}}
 						/>
 						<button onClick={sendMessage}>send</button>
-
 					</div>
 				</div>
 			</div>

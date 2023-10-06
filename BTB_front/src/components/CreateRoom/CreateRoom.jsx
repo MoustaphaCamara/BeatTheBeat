@@ -1,20 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Input from "../ui/InputButtonRoom/InputButton";
 import "./CreateRoom.scss";
 
-import io from "socket.io-client";
-const socket = io.connect("http://localhost:3001");
+
 
 const CreateRoom = () => {
 	const [room, setRoom] = useState("");
 	const [author, setAuthor] = useState("")
 
-	const joinRoom = () => {
-		if (room !== "") {
-			socket.emit("join_room", room);
-		}
-	};
 
 	return (
 		<div>
@@ -44,7 +37,7 @@ const CreateRoom = () => {
 							}}
 						/>
 						<Link to={`/waiting_room?room=${room}&author=${author}`}>
-							<button onClick={joinRoom}>Join</button>
+							<button>Join</button>
 						</Link>
 					</div>
 				</div>
