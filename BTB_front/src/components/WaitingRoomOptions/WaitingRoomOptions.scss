@@ -1,0 +1,112 @@
+.waiting_container {
+  margin-bottom: 2rem;
+  .category_title {
+    align-self: flex-start;
+    margin-bottom: 1.2rem;
+  }
+  height: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  min-width: 500px;
+  background: rgba(217, 217, 217, 0.4);
+  box-shadow: 4px 4px 20px 0px rgba(221, 46, 229, 0.4);
+  border-radius: 20px;
+}
+
+.category_container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+.category_choice {
+  width: 100px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: linear-gradient(116deg, #7b427d 0%, #13a5b2 123.52%);
+  cursor: pointer;
+  &:hover {
+    transition: all 0.3s ease;
+    transform: translateY(-1px);
+    filter: contrast(2);
+  }
+  &:focus {
+    border: 2px solid cyan;
+  }
+}
+.title_container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.start {
+  color: black;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+
+  width: 120px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #24ddee;
+  transition: all 0.4s ease;
+
+  margin-top: 32px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    filter: contrast(2);
+  }
+}
+
+.timer_container,
+.number_container {
+  margin: 16px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// NUMBERS
+.numbers {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+.values {
+  display: flex;
+  width: 63%;
+  justify-content: space-evenly;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 2px solid #f088f5;
+  background: linear-gradient(116deg, #9b569e 0%, #1ba7b4 123.52%);
+  cursor: pointer;
+  &:focus {
+    border: 2px solid #24ddee;
+  }
+}
+.timer_container .numbers .number {
+  width: 90px;
+}

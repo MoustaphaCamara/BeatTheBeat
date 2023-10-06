@@ -1,0 +1,32 @@
+.container-leaderboard{
+  border-radius: 20px;
+  background: rgba(245, 236, 17, 0.30);
+  padding: 30px 40px 60px 40px;
+  height: 57vh;
+  width: 450px;
+  color: white;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* Styles pour la barre de défilement WebKit */
+.container-leaderboard::-webkit-scrollbar {
+  width: 12px; /* Largeur de la barre de défilement */
+}
+
+/* Style du fond de la barre de défilement */
+.container-leaderboard::-webkit-scrollbar-track {
+  background: rgba(245, 237, 17, 0); /* Couleur de fond */
+  border-radius: 20px; /* Rayon des coins du fond de la barre de défilement */
+}
+
+/* Style du curseur (thumb) de la barre de défilement */
+.container-leaderboard::-webkit-scrollbar-thumb {
+  background-color: #303030; /* Couleur du curseur */
+  border-radius: 10px; /* Rayon des coins du curseur */
+}
+
+/* Style de survol du curseur (thumb) de la barre de défilement */
+.container-leaderboard::-webkit-scrollbar-thumb:hover {
+  background-color: #333; /* Couleur du curseur au survol */
+}

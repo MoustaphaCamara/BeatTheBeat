@@ -1,0 +1,12 @@
+{
+  "quizz": {
+    "id": 1,
+    "musique": "fichier mp3",
+    "question": "chaine de carac",
+    "choix1": "abc",
+    "choix2": "cde",
+    "choix3": "fgh",
+    "choix4": "ijk",
+    "correcte": "choix1"
+  }
+}
