@@ -1,0 +1,20 @@
+.container-inputs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	padding: 20px 30px 40px 30px;
+	background-color: rgb(240, 136, 245, 0.6);
+	border-radius: 20px;
+	align-items: center;
+}
+.side-create-room {
+	border-right: 1px solid black;
+	padding-right: 60px;
+}
+.side-create-room,
+.side-join-room{
+  color: white;
+}
+.small{
+  width: 120px;
+}

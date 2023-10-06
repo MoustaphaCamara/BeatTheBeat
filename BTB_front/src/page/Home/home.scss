@@ -1,0 +1,13 @@
+body {
+}
+.home_container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  gap: 20px;
+}
+.left_part {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
