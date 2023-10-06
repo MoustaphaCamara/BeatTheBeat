@@ -15,16 +15,18 @@ const io = new Server(server, {
 	},
 });
 
-io.on("connection", (socket) => {
+io.on("connection", (socket) => {  
 	console.log(`${socket.id} is connected`);
   
 	socket.on("send_message", (data) => {
-		console.log("dez");
+		console.log(data);
 		socket.to(data.room).emit("receive_message", data);
 	});
 
 	socket.on('join_room', (data) => {
 		socket.join(data)
+		console.log(`join room : ${data}`);
+
 	})
 
 	

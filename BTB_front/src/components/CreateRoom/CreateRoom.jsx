@@ -8,6 +8,7 @@ const socket = io.connect("http://localhost:3001");
 
 const CreateRoom = () => {
 	const [room, setRoom] = useState("");
+	const [author, setAuthor] = useState("")
 
 	const joinRoom = () => {
 		if (room !== "") {
@@ -20,7 +21,14 @@ const CreateRoom = () => {
 			<div className="container-inputs">
 				<div className="side-create-room">
 					<h3>Pseudo</h3>
-					<Input placeholder="pseudo" button="Create room" />
+					<input
+							type="text"
+							placeholder="pseudo"
+							name="text"
+							onChange={(event) => {
+								setAuthor(event.target.value);
+							}}
+						/>
 				</div>
 
 				<div className="side-join-room">
@@ -35,7 +43,7 @@ const CreateRoom = () => {
 								setRoom(event.target.value);
 							}}
 						/>
-						<Link to={`/waiting_room?room=${room}&playerRoom=Askralos`}>
+						<Link to={`/waiting_room?room=${room}&author=${author}`}>
 							<button onClick={joinRoom}>Join</button>
 						</Link>
 					</div>

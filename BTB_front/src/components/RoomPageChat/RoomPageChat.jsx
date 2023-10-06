@@ -10,27 +10,43 @@ const RoomPageChat = () => {
 	const location = useLocation();
 	const searchParams = new URLSearchParams(location.search);
 	const room = searchParams.get("room");
+	const author = searchParams.get("author");
 
 	const [message, setMessage] = useState("");
-	const [messageReceive, setMessageReceive] = useState("");
+	const [messageList, setMessageList] = useState([]);
 
-	const sendMessage = () => {
-		socket.emit("send_message", {message : message, room : room });
+	const sendMessage = async () => {
+		if (message !== "") {
+			const messageData = {
+				room: room,
+				author: author,
+				message: message,
+			};
+
+			console.log("sending messageData:", messageData);
+			await socket.emit("send_message", messageData);
+		}
 	};
 
 	useEffect(() => {
 		socket.on("receive_message", (data) => {
-			setMessageReceive(data.message);
+			setMessageList((list) => [...list, data]);
 		});
-	}, [socket]);
+	}, [socket, author]);
+
+	console.log(messageList);
 
 	return (
 		<div>
 			<div className="chat_container">
 				<div className="chat_message">
-					<p className="chat_pseudo">
-						Askralos: <span>{messageReceive}</span>{" "}
-					</p>
+					{messageList?.map((messageContent, index) => {
+						return (
+							<p key={index} className="chat_pseudo">
+								{messageContent.author} : <span>{messageContent.message}</span>
+							</p>
+						);
+					})}
 				</div>
 
 				<div className="chat_input">
@@ -44,6 +60,7 @@ const RoomPageChat = () => {
 							}}
 						/>
 						<button onClick={sendMessage}>send</button>
+
 					</div>
 				</div>
 			</div>
