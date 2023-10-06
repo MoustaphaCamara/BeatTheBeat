@@ -64,7 +64,7 @@ const RoomPageChat = () => {
               }}
             />
             <button className="start2" onClick={sendMessage}>
-              send
+              Send
             </button>
           </div>
         </div>
