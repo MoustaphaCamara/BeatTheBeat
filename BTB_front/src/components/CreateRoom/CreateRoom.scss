@@ -1,20 +1,42 @@
 .container-inputs {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 30px;
-	padding: 20px 30px 40px 30px;
-	background-color: rgb(240, 136, 245, 0.6);
-	border-radius: 20px;
-	align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px 30px 40px 30px;
+  background-color: rgb(240, 136, 245, 0.6);
+  border-radius: 20px;
+  align-items: center;
 }
 .side-create-room {
-	border-right: 1px solid black;
-	padding-right: 60px;
+  // border-right: 1px solid black;
+  padding-right: 60px;
 }
 .side-create-room,
-.side-join-room{
+.side-join-room {
   color: white;
 }
-.small{
+.small {
   width: 120px;
+}
+.create_room_input {
+  background: white;
+  color: black;
+  padding: 12px;
+  border-radius: 8px;
+}
+.create_room_button {
+  font-weight: 900;
+  margin-left: 16px;
+  color: black;
+  width: 84px;
+  height: 39px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background: #f088f5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background: #12b4c3;
+  }
 }
