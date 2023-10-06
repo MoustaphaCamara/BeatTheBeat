@@ -7,6 +7,7 @@ const InputSubmitRoom = ({ action, color }) => {
       className="input_submit"
       value={action}
       style={{ background: color }}
+      
     />
   );
 };
