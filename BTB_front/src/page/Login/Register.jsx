@@ -1,34 +1,24 @@
-import "./Login.scss";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
-import Cookies from "js-cookie";
+import "./Register.scss";
 
-export default function Login() {
+function Register() {
   const [values, setValues] = useState({
+    name: "",
     email: "",
     password: "",
   });
-
   const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8081/login", values, {})
-      .then((res) => {
-        console.log(res);
-        if (res.data.Status === "Success") {
-          Cookies.set("token", res.data.token);
-          navigate("/");
-        } else {
-          alert(res.data.Message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("An error occurred during login.");
-      });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post("http://localhost:8081/register", values, {}).then((res) => {
+      if (res.data.Status === "Success") {
+        navigate("/login");
+      } else {
+        alert("Error");
+      }
+    });
   };
 
   return (
@@ -39,49 +29,58 @@ export default function Login() {
             <img
               src="src\assets\beatthe-transformed-modified-PhotoRoom.png-PhotoRoom.png"
               alt="logo"
-              className="logo"
+              className="logo2"
             />
           </Link>
-          <h2 className="sign">Sign-In</h2>
+          <h2 className="nam2">Sign-Up</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
+              <label htmlFor="name">
+                <strong className="nam">Name</strong>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter Name"
+                name="name"
+                onChange={(e) => setValues({ ...values, name: e.target.value })}
+                className="form-control rounded-0"
+              />
+            </div>
+            <div className="mb-3">
               <label htmlFor="email">
-                <strong className="pass">Email</strong>
+                <strong className="nam">Email</strong>
               </label>
               <input
                 type="email"
                 placeholder="Enter Email"
                 name="email"
-                autoComplete="off"
                 onChange={(e) =>
                   setValues({ ...values, email: e.target.value })
                 }
                 className="form-control rounded-0"
-              ></input>
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="password">
-                <strong className="pass">Password</strong>
+                <strong className="nam">Password</strong>
               </label>
               <input
                 type="password"
                 placeholder="Enter Password"
                 name="password"
-                autoComplete="off"
                 onChange={(e) =>
                   setValues({ ...values, password: e.target.value })
                 }
                 className="form-control rounded-0"
-              ></input>
+              />
             </div>
             <button type="submit" className="btn btn-success w-100 rounded-0">
-              Log in
+              {" "}
+              Sign up
             </button>
-            <p className="justify-content-center align-items-center">
-              You are agree to our terms and policies
-            </p>
-            <Link to="/register" className="signIn-button  ">
-              <span className="text"> Register</span>
+            <p>You are agree to our terms and policies</p>
+            <Link to="/login" className="Login-button">
+              <span className="text"> Login</span>
             </Link>
           </form>
         </div>
@@ -92,3 +91,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Register;

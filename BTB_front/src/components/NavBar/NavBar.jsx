@@ -1,5 +1,5 @@
 import "./NavBar.scss";
-import logo from "../../assets/BTB logo.png";
+import logo from "../../assets/beatthe-transformed.png";
 import ButtonSignIn from "../ui/ButtonNavSignIn/ButtonSignIn";
 import ButtonLogIn from "../ui/ButtonNavLogIn/ButtonLogIn";
 import { NavLink } from "react-router-dom";
@@ -27,7 +27,9 @@ const NavBar = () => {
       </div>
 
       <div className="sideright">
-        <ButtonSignIn content="Sign In" />
+        <NavLink to="/register">
+          <ButtonSignIn content="Sign In" />
+        </NavLink>
         <NavLink to="/login">
           <ButtonLogIn content="Log In" />
         </NavLink>
