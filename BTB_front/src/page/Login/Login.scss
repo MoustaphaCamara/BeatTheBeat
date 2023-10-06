@@ -48,7 +48,7 @@ body,
 }
 
 .w-50 {
-  width: 50%;
+  width: 70%;
 }
 
 .mb-3 {
@@ -94,20 +94,20 @@ body,
   background-color: #f8f9fa;
 }
 
-/* existing styles ... */
-
 .login-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1200px; /* you can adjust this value based on your design needs */
+  max-width: 1200px;
+  margin-left: 10%;
 }
 
 .login-image img {
-  max-width: 100%;
+  max-width: 74%;
   height: auto;
-  margin-left: -50%;
+  margin-top: -10%;
+  margin-left: -10%;
 }
 .signIn-button {
   align-items: center;

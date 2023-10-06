@@ -51,9 +51,9 @@ function Home() {
       {auth ? (
         <>
           <Banner />
-          <button className="btn btn-danger" onClick={handleLogout}>
+          {/* <button className="btn btn-danger" onClick={handleLogout}>
             Logout
-          </button>
+          </button> */}
           <div className="home_container">
             <div className="left_part">
               <CreateRoom />
@@ -67,11 +67,11 @@ function Home() {
       ) : (
         <>
           <Banner />
-          <h3>{message}</h3>
+          {/* <h3>{message}</h3>
 
           <Link to="/login" className="btn btn-primary">
             <h3>No auth : Login Now</h3>
-          </Link>
+          </Link> */}
           <div className="home_container">
             <div className="left_part">
               <CreateRoom />
