@@ -7,71 +7,70 @@ import io from "socket.io-client";
 const socket = io.connect("http://localhost:3001");
 
 const RoomPageChat = () => {
-	const location = useLocation();
-	const searchParams = new URLSearchParams(location.search);
-	const room = searchParams.get("room");
-	const author = searchParams.get("author");
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const room = searchParams.get("room");
+  const author = searchParams.get("author");
 
-	const [message, setMessage] = useState("");
-	const [messageList, setMessageList] = useState([]);
+  const [message, setMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
 
+  const sendMessage = async () => {
+    if (message !== "") {
+      const messageData = {
+        room: room,
+        author: author,
+        message: message,
+      };
 
+      console.log("sending messageData:", messageData);
+      await socket.emit("send_message", messageData);
+    }
+  };
 
-	const sendMessage = async () => {
-		if (message !== "") {
-			const messageData = {
-				room: room,
-				author: author,
-				message: message,
-			};
+  useEffect(() => {
+    if (room !== "") {
+      socket.emit("join_room", room);
+    }
 
-			console.log("sending messageData:", messageData);
-			await socket.emit("send_message", messageData);
-		}
-	};
+    socket.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+  }, []);
 
-	useEffect(() => {
+  console.log(messageList);
 
-		if (room !== "") {
-			socket.emit("join_room", room);
-		}
+  return (
+    <div>
+      <div className="chat_container">
+        <div className="chat_message">
+          {messageList?.map((messageContent, index) => {
+            return (
+              <p key={index} className="chat_pseudo">
+                {messageContent.author} : <span>{messageContent.message}</span>
+              </p>
+            );
+          })}
+        </div>
 
-		socket.on("receive_message", (data) => {
-			setMessageList((list) => [...list, data]);
-		});
-	}, []);
-
-	console.log(messageList);
-
-	return (
-		<div>
-			<div className="chat_container">
-				<div className="chat_message">
-					{messageList?.map((messageContent, index) => {
-						return (
-							<p key={index} className="chat_pseudo">
-								{messageContent.author} : <span>{messageContent.message}</span>
-							</p>
-						);
-					})}
-				</div>
-
-				<div className="chat_input">
-					<div className="quizz_input">
-						<input
-							className="input_text"
-							type="text"
-							placeholder="chat"
-							onChange={(event) => {
-								setMessage(event.target.value);
-							}}
-						/>
-						<button onClick={sendMessage}>send</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+        <div className="chat_input">
+          <div className="quizz_input">
+            <input
+              className="input_text"
+              type="text"
+              placeholder="chat"
+              onChange={(event) => {
+                setMessage(event.target.value);
+              }}
+            />
+            <button className="start2" onClick={sendMessage}>
+              send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default RoomPageChat;
